@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Cabecera fija</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+      
+</head>
+<!-- estilo css-->
+<style>
+    body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #666;
+	background: #f2f2f2; 
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 2.3em;
+	line-height: 1.3em;
+	margin: 15px 0;
+	text-align: center;
+	font-weight: 300;
+}
+
+p {
+	margin: 0 0 1.5em 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+/*estilo a la cabecera */
+
+#main-header {
+	background: #333;
+	color: white;
+	height: 80px;
+}	
+	#main-header a {
+		color: white;
+	}
+
+/*
+ * Logo
+ */
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #0b76a6;
+	}
+	
+	#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	
+	#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #999;
+	}
+	
+
+/* Navegación */
+nav {
+	float: right;
+}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+	}
+	
+		nav ul li {
+			display: inline-block;
+			line-height: 80px;
+		}
+			
+			nav ul li a {
+				display: block;
+				padding: 0 10px;
+				text-decoration: none;
+			}
+			
+				nav ul li a:hover {
+					background: #0b76a6;
+				}
+/*diseño del contenido*/
+
+#main-content {
+	background: white;
+	width: 90%;
+	max-width: 800px;
+	margin: 20px auto;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+	#main-content header,
+	#main-content .content {
+		padding: 40px;
+	}
+
+</style>
+<body>
+	
+	<header id="main-header">
+		
+		<a id="logo-header" href="#">
+			<span class="site-name"><img src="imagen/calaveras.png" alt="imagen"width="40" height="40"></span>
+			<span class="site-desc">Daniel Rico Rodriguez</span>
+		</a> <!-- / #logo-header -->
+
+		<nav>
+			<ul>
+				<li><a  href="index_view.html">Inicio</a></li>
+				<li><a href="inicia.html">Iniciar sesion</a></li>
+				<li><a  href="registro.html">Registro</a></li>
+				<li><a href='URL de la red social' ><img src="imagen/facebook.png" alt="imagen"width="15" height="15"><i class="fa fa-facebook"></i></a></li>
+                <li><a href='URL de la red social'  ><img src="imagen/google.png" alt="imagen"width="15" height="15"><i class="fa fa-google"></i></a></li>
+
+                
+                <div id='buscar-top'><form action='/search' id='searchthis' method='get' style='display: inline;'>
+                <input  name='q' placeholder='BUSCAR' size='30' type='text'/>
+
+			</ul>
+		</nav>
+
+	</header><!-- script -->
+	
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script><!--captcha-->
+	<section id="main-content">
+	
+		<article>
+			<form action="inicio.php" method="POST" name="formx"><!--vinculacion inicio.php-->
+				<div class="g-recaptcha" data-sitekey="your_site_key"></div><!--captcha-->
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" name="email" class="login-field" value="" placeholder="email" maxlength="10" id="login-name" 
+				pattern="^@?(\w){1,15}$" title="Este no parece un usuario de correo electronico válido"  required>
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" name="password" class="login-field" value="" placeholder="password" maxlength="8" id="login-pass" required>
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+         
+                    <input type="submit" class="btn btn-primary btn-large btn-block" value="INGRESAR">
+				<a class="login-link" href="registro.html">Registrarse</a>
+			</div> 
+
+			<div class="form-check">
+				<input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE["login_usuario"])) { ?> 
+				<label for="remember-me">Recordarme</label>
+			  </div>
+			  
+			</form>
+			
+		</article> 
+	
+	</section> 
+
+	
+	
+
+
+	
+</body>
+</html>
